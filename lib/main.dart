@@ -7,13 +7,14 @@ import 'experience.dart';
 void main() => runApp(ResumeApp());
 
 class ResumeApp extends StatelessWidget {
-  const ResumeApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Resume App',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+        fontFamily: 'Roboto',
+      ),
       home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -21,69 +22,114 @@ class ResumeApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My Resume')),
-      body: Padding(
+      appBar: AppBar(
+        title: Text('My Resume'),
+        centerTitle: true,
+        elevation: 4,
+      ),
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Center(
+            Center(
               child: CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage(
-                    'assets/profile.jpg'), // Add an image in assets folder
+                radius: 60,
+                backgroundImage: AssetImage('assets/profile.jpg'),
               ),
             ),
-            const SizedBox(height: 20),
-            const Center(
-              child: Text(
-                'Your Name',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            SizedBox(height: 20),
+            Text(
+              'Your Name',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.teal[700],
               ),
             ),
-            const SizedBox(height: 10),
-            const Center(
-                child: Text('Phone: +123 456 7890 | Email: you@example.com')),
-            const SizedBox(height: 20),
-            ListTile(
-              title: const Text('Personal Info'),
-              trailing: const Icon(Icons.arrow_forward),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PersonalInfoPage()),
-              ),
+            SizedBox(height: 10),
+            Text(
+              'Phone: +123 456 7890 | Email: you@example.com',
+              style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+              textAlign: TextAlign.center,
             ),
-            ListTile(
-              title: const Text('Skills'),
-              trailing: const Icon(Icons.arrow_forward),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SkillsPage()),
-              ),
+            SizedBox(height: 30),
+            CustomListTile(
+              title: 'Personal Info',
+              icon: Icons.person,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PersonalInfoPage()),
+                );
+              },
             ),
-            ListTile(
-              title: const Text('Education'),
-              trailing: const Icon(Icons.arrow_forward),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EducationPage()),
-              ),
+            CustomListTile(
+              title: 'Skills',
+              icon: Icons.code,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SkillsPage()),
+                );
+              },
             ),
-            ListTile(
-              title: const Text('Experience'),
-              trailing: const Icon(Icons.arrow_forward),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ExperiencePage()),
-              ),
+            CustomListTile(
+              title: 'Education',
+              icon: Icons.school,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EducationPage()),
+                );
+              },
+            ),
+            CustomListTile(
+              title: 'Experience',
+              icon: Icons.work,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ExperiencePage()),
+                );
+              },
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomListTile extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const CustomListTile({
+    Key? key,
+    required this.title,
+    required this.icon,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 2,
+      margin: EdgeInsets.symmetric(vertical: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      child: ListTile(
+        leading: Icon(icon, color: Colors.teal),
+        title: Text(
+          title,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+        ),
+        trailing: Icon(Icons.arrow_forward_ios, size: 16, color: Colors.teal),
+        onTap: onTap,
       ),
     );
   }
