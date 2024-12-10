@@ -11,11 +11,9 @@ class SkillsPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          SkillTile(skill: 'Flutter Development'),
-          SkillTile(skill: 'UI/UX Design'),
-          SkillTile(skill: 'JavaScript Programming'),
-          SkillTile(skill: 'Team Collaboration'),
-          SkillTile(skill: 'Problem Solving'),
+          SkillTile(skill: 'Learning Flutter Development'),
+          SkillTile(skill: 'Frontend Web Development'),
+          SkillTile(skill: 'Team Collaboration')
         ],
       ),
     );

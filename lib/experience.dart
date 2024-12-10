@@ -12,15 +12,16 @@ class ExperiencePage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         children: [
           ExperienceTile(
-            position: 'Software Developer',
-            company: 'Tech Solutions',
-            duration: '2020-Present',
-            description: 'Developing mobile applications with Flutter.',
+            position: 'Software Development Learner',
+            company: 'Tech EDGE Solutions',
+            duration: '2024-Present',
+            description:
+                'Learning development of mobile applications with Flutter.',
           ),
           ExperienceTile(
-            position: 'Intern',
-            company: 'Innovative Labs',
-            duration: '2019-2020',
+            position: 'Team Member',
+            company: 'DBMS Labs',
+            duration: '4th Semester',
             description: 'Assisted in developing web-based applications.',
           ),
         ],

@@ -13,14 +13,14 @@ class EducationPage extends StatelessWidget {
         child: Column(
           children: [
             EducationTile(
-              degree: 'BSc in Computer Science',
+              degree: 'Studying BSc in Computer Science & Engineering',
               institution: 'XYZ University',
-              year: '2016-2020',
+              year: '2022-2023',
             ),
             EducationTile(
-              degree: 'High School Diploma',
-              institution: 'ABC High School',
-              year: '2014-2016',
+              degree: 'HSC',
+              institution: 'ABC College',
+              year: '2020-2022',
             ),
           ],
         ),

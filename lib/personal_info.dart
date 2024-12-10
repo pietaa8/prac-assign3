@@ -13,12 +13,11 @@ class PersonalInfoPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InfoTile(title: 'Full Name', value: 'Your Full Name'),
-            InfoTile(title: 'Date of Birth', value: '01 January 2000'),
-            InfoTile(
-                title: 'Address', value: '123, Street Name, City, Country'),
-            InfoTile(title: 'Phone', value: '+123 456 7890'),
-            InfoTile(title: 'Email', value: 'you@example.com'),
+            InfoTile(title: 'Full Name', value: 'Ahmed'),
+            InfoTile(title: 'Date of Birth', value: '06 September 2003'),
+            InfoTile(title: 'Address', value: '123, Fine Street, Ctg, BD'),
+            InfoTile(title: 'Phone', value: '+0123 456 7891'),
+            InfoTile(title: 'Email', value: 'ahmed@example.com'),
           ],
         ),
       ),

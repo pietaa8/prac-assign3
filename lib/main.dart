@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage('assets/profile.jpg'),
+                backgroundImage: AssetImage('assets/images/profilepic.jpg'),
               ),
             ),
             SizedBox(height: 20),
@@ -52,8 +52,9 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Phone: +123 456 7890 | Email: you@example.com',
-              style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+              'Phone: +0123 456 7891 | Email: ahmed@example.com',
+              style: TextStyle(
+                  fontSize: 16, color: Color.fromARGB(255, 70, 116, 32)),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 30),
