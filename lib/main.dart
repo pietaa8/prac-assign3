@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Your Name',
+              'Ahmed',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
